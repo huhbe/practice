@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+  
+  * { font-family: 'Nanum Pen Script', sans-serif; }
+  
+  .fr{
+  	width:300px;
+  	border-radius:10px;
+  	box-shadow: 0 0 15px gray;
+  }
+  
+  #user{
+  	border:1px solid #ccc;
+  	padding:5px;
+  	width:250px;
+  }
+  
+  #print{
+  	display:block;
+  	color:blue;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="fr">
+	    <h2>요청사항</h2>
+	    <input id="user" type="text">
+	    <p>
+	      <b>입력하신 내용</b> <span id="print"></span>
+	    </p>
+	</div>
+	
+<script type="text/javascript">
+	// keydown 함수는 입력할 때마다 입력한 내용을 갱신해서 보여준다.
+	$('#user').keydown(function(){
+		// 입력한 내용의 value 값을 변수 p에 저장
+		var p = $('#user').val();
+		
+		// 저장한 내용을 텍스트로 띄운다.
+		// 입력할 때마다 갱신되어 텍스트가 나타난다.
+		$('#print').text(p);
+	})
+</script>
+</body>
+</html>

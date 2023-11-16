@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+   @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+   * { font-family: 'Noto Sans KR', sans-serif; }
+   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <div id="gal">
+    <div class="p">
+      <span class="p-num">
+        <span></span> / <span></span>
+      </span>
+      <button class="prev">&lt;</button>
+      <button class="next">&gt;</button>
+    </div>
+   <div class="con">
+      <div><img src="images/고양이1.jpg"></div>
+      <div><img src="images/고양이2.jpg"></div>
+      <div><img src="images/고양이3.jpg"></div>
+   </div>
+</div>
+
+<script>
+	//이미지 개수
+	var total=$('.con div').length;
+	var current=1;
+	
+	$('.p-num span:first').text(current); //1
+	$('.p-num span:last').text(total); //3
+	
+	//다음 버튼 누를 때
+	$('.next').click(function(){
+		current++;
+		if(current>total){
+			current=1;
+		}
+		$('.con > div:first').insertAfter('.con > div:last');
+		//insertAfter: 지정한 요소 뒤에 새로운 요소 삽입 -> last 뒤에 first 추가
+		$('.p-num span:first').text(current);
+	});
+	
+	$('.prev').click(function(){
+		current--;
+		if(current<1){
+			current=total;
+		}
+		$('.con > div:last').insertBefore('.con > div:first');
+		//insertBefore: 지정한 요소 시작에 요소 삽입 -> first 앞에 last 추가
+		$('.p-num span:first').text(current);
+		
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ textarea {
+ 	font-size: 20px;
+    width: 500px;
+    height: 150px;
+    resize: none;
+  }
+  
+  .warning {
+  	color: red;
+  }
+  
+</style>
+</head>
+<body>
+<div class="fr">
+	<h1>고객 문의 사항</h1>
+	
+	<textarea class="tx"></textarea>
+	
+	<span class="cnt">0/100</span>
+	<p class="warning">입력 제한 횟수 초과!!!</p>
+</div>
+
+<script type="text/javascript">
+	$('.warning').hide();
+	
+	$('.tx').keyup(function(){
+		$('.warning').hide();
+		var p=$('.tx').val();
+		
+		$('.cnt').text(p.length+'/100');
+		
+		if(p.length>100){
+			$('.warning').show();
+		}
+	});
+</script>
+</body>
+</html>

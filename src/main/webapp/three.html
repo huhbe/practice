@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+  
+  * { font-family: 'Nanum Pen Script', sans-serif; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="items">
+		<b>제이쿼리</b>
+		<a href="#" class="list-item">List 1</a>
+		<a href="#" class="list-item">List 2</a>
+		<a href="#" class="list-item start">List 3</a>
+		<a href="#" class="list-item">List 4</a>
+		<a href="#" class="list-item">List 5</a>
+	</div>
+	
+<script type="text/javascript">
+	$('.list-item').css({
+		'display':'block',
+		'text-decoration':'none'
+	});
+	
+	$('.list-item').siblings('a').css({
+		'color':'aqua'
+	});
+	
+	$('.list-item.start').siblings().css('background-color', 'pink');
+	$('.list-item.start').parent().css({
+		'border':'2px solid green'
+	});
+</script>
+</body>
+</html>

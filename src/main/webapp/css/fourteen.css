@@ -1,0 +1,20 @@
+body{
+	margin:0;
+}
+.a div{
+	border:1px solid #ddd;
+	height:300px;
+}
+.a{
+	width:1500px;
+	height:300px;
+	position:relative;
+	overflow:hidden;
+}
+.item{
+	width:3600px;
+	font-size:0;
+	position:absolute;
+	top:0;
+	left:0;
+}

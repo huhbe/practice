@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+  
+  * { font-family: 'Nanum Pen Script', sans-serif; }
+  
+  .size button{
+  	width : 40px;
+  	height : 40px;
+  	cursor : pointer;  
+  }
+  
+  .size button.active{
+  	background-color:red;
+  	color:white;
+  }
+</style>
+
+
+
+</head>
+<body>
+<div class="fr">
+	<h1>Select Size</h1>
+	<div class="size">
+		<button>xs</button>
+		<button>s</button>
+		<button>m</button>
+		<button>l</button>
+		<button>xl</button>
+		<button>xxl</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('.size button').click(function(){
+		
+		// 클릭한 버튼에 active 클래스를 추가한다.
+		$(this).addClass('active');
+		
+		// 다른 버튼들(형제들)은 active 클래스를 적용시키지 않는다.
+		$(this).siblings().removeClass('active');
+		
+	});
+
+</script>
+
+</body>
+</html>

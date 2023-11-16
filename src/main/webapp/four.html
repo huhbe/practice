@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+  
+  * { font-family: 'Nanum Pen Script', sans-serif; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="fr">
+    <div class="bu">
+      <button class="btn show">show</button>
+      <button class="btn hide">hide</button>
+      <button class="btn toggle">toggle</button>
+    </div>
+    <p class="desc">
+		인권에 대한 무시와 경멸이 인류의 양심을 격분시키는 만행을 초래하였으며, 인간이 언론과 신앙의 자유, 그리고 공포와
+    </p>
+  </div>
+  
+  
+  <script type="text/javascript">
+  	
+  	// 처음에 요소를 숨긴다.
+  	$('.desc').hide();
+  	
+  	// show() 함수를 사용하여 show 버튼을 클릭하면 요소가 나타난다.
+  	$('.show').click(function(){
+  		// $('.desc').show();
+  		// fadeIn() 함수를 사용하면 서서히 나타난다.
+  		// slideDown() 함수를 사용하면 밑으로 나타난다.
+  	})
+  	
+  	// hide() 함수를 사용하여 hide 버튼을 클릭하면 요소가 숨겨진다.
+  	$('.hide').click(function(){
+  		// $('.desc').hide();
+  		// fadeOut() 함수를 사용하면 서서히 사라진다.
+  		// slideUp() 함수를 사용하면 위로 사라진다.
+  	})
+  	
+  	// toggle() 함수를 사용하여 toggle 버튼을 클릭하면 요소를 보였다 숨겼다 한다.
+  	$('.toggle').click(function(){
+  		// $('.desc').toggle();
+  		// stop().fadeToggle() 함수를 사용하면 천천히 toggle이 적용된다.
+  		// stop().slideToggle() 함수를 사용하면 위아래로 나타났다 사라진다.
+  		$('.desc').stop().slideToggle();
+  	})
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+ body { 
+      margin: 0;
+      height: 100vh;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+    body.dark-mode {
+      background-color: #000; 
+      color: #fff;
+    }
+    .container {
+      width: 800px; 
+      text-align: center;
+    }
+    .btn-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+<div class="con">
+    <h1>Light & Dark Mode</h1>
+    <p class="p">
+		카카오 창업자인 김범수 미래이니셔티브 센터장이 “모든 서비스와 사업을 원점에서 재검토할 것”이라며
+		“국민 눈높이에 부응하는 기업이 되도록 최선의 노력을 다할 것”이라고 밝혔다.
+		김범수 센터장은 13일 경기 성남 판교에 있는 알파돔타워 카카오모빌리티 본사에서 열린 제3차 공동체 비상 경영 회의에 참석하면서 기자들과 만나 이렇게 말했다.
+    </p>
+    <button class="btn-toggle dark-btn" id="btn-toggle">
+      <span>Dark Mode</span> <i class="bi bi-moon-fill"></i>
+    </button>
+  </div>
+  
+	<script type="text/javascript">
+		$('.btn-toggle').click(function(){
+			$('body').toggleClass('dark-mode');
+			$(this).css({'border':'1px solid #ccc'});
+			
+			//버튼 안에 있는 텍스트 변경
+			$(this).children('span').text(
+				$(this).children('span').text()=='Light Mode'?'Dark Mode' : 'Light Mode');
+		});
+		
+		$(this).find('i').toggleClass('bi-moon-fill bi-sun-fill');
+	</script>
+</body>
+</html>
